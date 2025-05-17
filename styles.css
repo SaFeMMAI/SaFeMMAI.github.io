@@ -6,33 +6,18 @@
     font-size: clamp(12px, 2vh, 48px)
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     line-height: 1.6;
 }
 
-a:link {
-color: #00a0fc;
-background-color: transparent;
-text-decoration: none;
-}
-a:visited {
-color: #00a0fc;
-background-color: transparent;
-text-decoration: none;
-}
-a:hover {
-color: #00a0fc;
-background-color: transparent;
-text-decoration: underline;
-}
-a:active {
-color: blue;
-background-color: transparent;
-text-decoration: underline;
-}
+
 
 /* Container for content */
 .container {
@@ -87,7 +72,7 @@ header p {
 }
 
 .logo {
-    width: 1.6rem; /* Adjust logo size */
+    width: 5rem; /* Adjust logo size */
     height: auto;
 }
 
@@ -190,26 +175,32 @@ header p {
 
 .cover-text {
     position: absolute;
+    text-align: center;
     top: 50%;
-    left: 1.5rem;
-    transform: translateY(-50%); /* Vertically center the text */
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #fff;
-    max-width: 90%; /* Ensure title has enough space to wrap into two lines */
+    /* max-width: 100%; Ensure title has enough space to wrap into two lines */
 }
 
-.cover-text h1 {
-    font-size: 3.5rem; /* Responsive font size */
-    margin: 0;
-    word-wrap: break-word; /* Ensure text breaks into multiple lines if needed */
-    white-space: normal; /* Allow text to break into multiple lines */
-    line-height: 1.2; /* Control line height for better spacing between lines */
+.cover-scroll-button {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    margin-top: 2rem;
+    background-color: #ffcc00a8;
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-.cover-text p {
-    padding-top: 1.6rem;
-    font-size: 1.2rem; /* Subtitle font size */
-    color: #ffd900bf;
-    font-weight: bold;
+.cover-scroll-button:hover {
+background-color: #00b0e1;
+transform: translateY(-2px);
 }
 
 /* Section styles */
@@ -222,6 +213,7 @@ header p {
     text-align: center;
     padding-bottom: 2%;
     font-size: 1.8rem;
+    color: #fcb500;
 }
 
 .section h3 {
@@ -231,6 +223,27 @@ header p {
 
 .section ul {
     padding-left: 1rem;
+}
+
+.section a:link {
+    color: #00a0fc;
+    background-color: transparent;
+    text-decoration: none;
+}
+.section a:visited {
+    color: #00a0fc;
+    background-color: transparent;
+    text-decoration: none;
+}
+.section a:hover {
+    color: #00a0fc;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.section a:active {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 
