@@ -11,13 +11,6 @@
     <link rel="icon" href="resources/favicon-black.png" type="image/png">
 </head>
 <body>
-    <!--
-    <header>
-        <div class="container">
-            <h1>Test-time Scaling for Computer Vision (ViSCALE) Workshop</h1>
-            <p>CVPR2025 | Nashville, USA</p>
-        </div>
-    </header>-->
 
     <!-- Navigation bar -->
     <nav class="navbar">
@@ -196,43 +189,6 @@
 </html>
 
 <script>
-function loadSchedule() {
-    fetch('schedule.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('schedule-section').innerHTML = data;
-    })
-    .catch(error => {
-        console.error('Error loading schedule.html:', error);
-    });
-}
-
-window.onload = loadSchedule;
-
-// List of events with their UTC times
-const events = [
-{ name: 'Workshop Day', timeUTC: '2025-06-17T14:00:00Z' },
-// { name: 'Session 1: Test-time Scaling Algorithms', timeUTC: '2025-03-01T11:00:00Z' },
-// { name: 'Session 2: Multimodal Models and Safety', timeUTC: '2025-03-01T13:00:00Z' },
-// { name: 'Panel Discussion', timeUTC: '2025-03-01T15:00:00Z' },
-// { name: 'Networking & Closing', timeUTC: '2025-03-01T16:30:00Z' }
-];
-
-// Function to convert UTC to selected time zone and update the schedule
-function updateSchedule() {
-    const timezone = document.getElementById('timezone').value;
-    console.log(timezone)
-    const dateOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
-
-    events.forEach((event, index) => {
-        const eventDate = new Date(event.timeUTC);
-        const timeInZone = eventDate.toLocaleTimeString('en-US', { timeZone: timezone, ...dateOptions });
-        document.getElementById(`time${index + 1}`).textContent = timeInZone;
-    });
-}
-
-// Initialize the schedule with the default time zone (UTC)
-updateSchedule();
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
