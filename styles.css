@@ -176,7 +176,7 @@ header p {
 .cover-text {
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -187,7 +187,7 @@ header p {
     display: inline-block;
     padding: 0.4rem 0.8rem;
     margin-top: 2rem;
-    background-color: #ffcc00a8;
+    background-color: #1D3C5E; /*#ffcc00a8;*/
     color: rgb(255, 255, 255);
     font-size: 0.8rem;
     border: none;
@@ -199,7 +199,7 @@ header p {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .cover-scroll-button:hover {
-background-color: #00b0e1;
+background-color: #FF5E3A; /*#00b0e1*/
 transform: translateY(-2px);
 }
 
@@ -307,8 +307,8 @@ margin-top:0.4rem;
 
 .committee-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 4 columns */
-    gap: 1rem; /* Space between grid items */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 2rem; /* Space between grid items */
     text-align: center;
 }
 
@@ -317,20 +317,22 @@ margin-top:0.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10%;
-    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,1);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    border-radius: 1rem; /* less rounded */
+    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.08);
+    padding: 1rem 0.5rem; /* less padding */
+    max-width: 250px;     /* set a max width */
+    margin: 0 auto;       /* center in grid cell */
+    background: #fff;     /* optional: white background */
 }
 
 /* Profile image styling */
 .profile-img {
-    width: 100%;  /* Make the image fill the container */
-    height: 100%;
+    width: 90%;  /* Make the image fill the container */
+    height: 90%;
     padding-bottom: 0%; /* Aspect ratio of 1:1 (square) */
-    border-radius: 60%;
+    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     max-width: 10rem;  /* Ensure a max size */
 }
 
