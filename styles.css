@@ -307,7 +307,7 @@ margin-top:0.4rem;
 
 .committee-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-columns: repeat(5, 1fr); /* 4 columns */
     gap: 2rem; /* Space between grid items */
     text-align: center;
 }
