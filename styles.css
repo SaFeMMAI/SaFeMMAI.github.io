@@ -594,3 +594,8 @@ footer p {
       display: none;
     }
   }
+
+.subtitle {
+    font-size: 0.7rem;
+    color: #4b6cb7 !important;
+}
