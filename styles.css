@@ -302,6 +302,24 @@ margin-left: 1rem;
     top: 0px;
 }
 }
+
+.sessions li:nth-child(-n+2)::before {
+    content: '✅';
+    margin-top: 0.2rem;
+    font-size: 1.4rem;
+    line-height: 1rem;
+    color: #4e5ed3;
+  
+    /* neutralize the circle’s styling */
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+
+
+
 .time{
 color: #2a2839;
 font-family: 'Poppins', sans-serif;
