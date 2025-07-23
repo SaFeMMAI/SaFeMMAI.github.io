@@ -459,8 +459,9 @@ margin-top:0.4rem;
   }
   
   .sponsors__logo img {
-    width: clamp(120px, 15rem, 360px);   /* scales up to 200 px on large screens */
-    height: auto;                       /* preserve aspect ratio */
+    height: 4rem;   /* scales up to 200 px on large screens */
+    padding-top: 1rem;
+    width: auto;                       /* preserve aspect ratio */
     filter: drop-shadow(0 1px 2px rgb(0 0 0 / .15)); /* subtle lift */
     transition: transform .2s;
   }
