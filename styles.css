@@ -304,19 +304,18 @@ margin-left: 1rem;
 }
 
 .sessions li:nth-child(-n+2)::before {
-    content: '✅';
-    margin-top: 0.2rem;
-    font-size: 1.4rem;
-    line-height: 1rem;
-    color: #4e5ed3;
-  
-    /* neutralize the circle’s styling */
-    width: auto;
-    height: auto;
-    background: none;
-    border: none;
-    box-shadow: none;
-  }
+    content: '';                         /* 1 — make the pseudo-element exist   */
+  width: 1.4rem;                       /* 2 — give it its own box            */
+  height: 1.4rem;
+  background-image: url('resources/checkmark.png');  /* 3 — set your image   */
+  background-size: contain;            /* 4 — scale it to the box            */
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* neutralise the hollow-dot decoration we added earlier */
+  border: none;
+  box-shadow: none;
+}
 
 
 
@@ -447,6 +446,29 @@ margin-top:0.4rem;
     background-color: transparent;
     text-decoration: underline;
 }
+
+/* A minimalist, responsive treatment */
+.sponsors {
+    text-align: center;
+    padding-block: 2rem;
+  }
+  
+  .sponsors__heading {
+    font-size: clamp(1.25rem, 2.5vw + .5rem, 1.75rem);
+    margin-bottom: 1rem;
+  }
+  
+  .sponsors__logo img {
+    width: clamp(120px, 15rem, 360px);   /* scales up to 200 px on large screens */
+    height: auto;                       /* preserve aspect ratio */
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / .15)); /* subtle lift */
+    transition: transform .2s;
+  }
+  
+  .sponsors__logo:hover img,
+  .sponsors__logo:focus img {
+    transform: scale(1.05);
+  }
 
 /* Responsive design for smaller devices */
 @media (max-width: 768px) {
