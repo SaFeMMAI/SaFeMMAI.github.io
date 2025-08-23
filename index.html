@@ -147,25 +147,26 @@
                         <tr>
                             <th>Time</th>
                             <th>Event</th>
+                            <th>Speaker</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>9:00</td><td>Opening Remarks</td></tr>
-      <tr><td><strong>9:15</strong></td><td><strong>Keynote Talk by Prof. Yao Qin</strong></td></tr>
-      <tr><td>9:45</td><td>Orals/Spotlight 1</td></tr>
-      <tr><td><strong>10:00</strong></td><td><strong>Keynote Talk by Prof. Yarin Gal</strong></td></tr>
-      <tr><td>10:30</td><td>Networking/Coffee Break</td></tr>
-      <tr><td><strong>11:00</strong></td><td><strong>Keynote Talk by Prof. Florian Tramèr</strong></td></tr>
-      <tr><td>11:30</td><td>Orals/Spotlight 2</td></tr>
-      <tr><td>11:45</td><td>Orals/Spotlight 3</td></tr>
-      <tr><td>12:00</td><td>Lunch Break</td></tr>
-      <tr><td>13:30</td><td>Poster Session</td></tr>
+                        <tr><td>9:00</td><td>Opening Remarks</td><td></td></tr>
+      <tr><td><strong>9:15</strong></td><td><strong><a href="#qin">Keynote Talk: TBD</a></strong></td><td><strong><a href="#qin">Prof. Yao Qin</a></strong></td></tr>
+      <tr><td>9:45</td><td>Orals/Spotlight 1</td><td></td></tr>
+      <tr><td><strong>10:00</strong></td><td><strong><a href="#gal">Keynote Talk: TBD</a></strong></td><td><strong><a href="#gal">Prof. Yarin Gal</a></strong></td></tr>
+      <tr><td>10:30</td><td>Networking/Coffee Break</td><td></td></tr>
+      <tr><td><strong>11:00</strong></td><td><strong><a href="#tramer">Keynote Talk: Memorization and Robustness in Multimodal Models</a></strong></td><td><strong><a href="#tramer">Prof. Florian Tramèr</a></strong></td></tr>
+      <tr><td>11:30</td><td>Orals/Spotlight 2</td><td></td></tr>
+      <tr><td>11:45</td><td>Orals/Spotlight 3</td><td></td></tr>
+      <tr><td>12:00</td><td>Lunch Break</td><td></td></tr>
+      <tr><td>13:30</td><td>Poster Session</td><td></td></tr>
       <tr><td>15:00</td><td>Networking/Coffee Break</td></tr>
-      <tr><td><strong>15:30</strong></td><td><strong>Keynote Talk by Prof. Yoshua Bengio</strong></td></tr>
-      <tr><td>16:00</td><td>Orals/Spotlight 4</td></tr>
-      <tr><td>16:15</td><td>Orals/Spotlight 5</td></tr>
-      <tr><td>16:30</td><td>Panel Discussion</td></tr>
-      <tr><td>17:00</td><td>Awards and Closing Remarks</td></tr>
+      <tr><td><strong>15:30</strong></td><td><strong><a href="#bengio">Keynote Talk: Avoiding Catastrophic Risks from Uncontrolled AI Agency</a></strong></td><td><strong><a href="#bengio">Prof. Yoshua Bengio</a></strong></td></tr>
+      <tr><td>16:00</td><td>Orals/Spotlight 4</td><td></td></tr>
+      <tr><td>16:15</td><td>Orals/Spotlight 5</td><td></td></tr>
+      <tr><td>16:30</td><td>Panel Discussion</td><td></td></tr>
+      <tr><td>17:00</td><td>Awards and Closing Remarks</td><td></td></tr>
                     </tbody>
                 </table></div>
               
@@ -190,7 +191,7 @@
         <div class="container">
             <h1>Speakers</h1>
             <!-- Our amazing speakers will be announced soon. -->
-            <div class="speaker-card">
+            <div class="speaker-card" id="bengio">
                 <img
                     src="resources/speaker/yoshua_bengio.jpg"
                     alt="Yoshua Bengio"
@@ -202,6 +203,13 @@
                     </a>
                     <!-- <strong>Yoshua Bengio</strong> -->
                     <div class="speaker-affiliation">Full Professor - Mila, Université de Montréal</div>
+                    <!-- Tabs -->
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="showTab(this, 'bio')">Bio</button>
+                        <button class="tab-button" onclick="showTab(this, 'abstract')">Abstract</button>
+                    </div>
+                    <!-- Tab Content -->
+                    <div class="tab-content active" data-tab="bio">
                     <p>
                         Yoshua Bengio is a world-leading expert in artificial intelligence, renowned for his pioneering work in deep learning, 
                         which earned him the 2018 A.M. Turing Award alongside Geoffrey Hinton and Yann LeCun. He is a Full Professor at Université de 
@@ -214,9 +222,15 @@
                         and currently chairs the International Scientific Report on the Safety of Advanced AI. In June 2025, he launches a new non-profit AI safety research 
                         organization called <a href="https://lawzero.org/en">LawZero</a>, to prioritize safety over commercial imperatives.
                     </p>
+                    </div>
+                    <div class="tab-content" data-tab="abstract">
+                        <p>
+                            AI agentic capabilities are rising exponentially, driven by scientific advances incorporating system 2 cognition into deep networks as well as by the commercial value of automating numerous human tasks. Besides bodily control, this may be the most significant gap that remains to human-level intelligence. Unfortunately, a series of recent scientific observations raise a major red flag: as AIs become better at reasoning and planning, more occurrences of deceptive and self-preservation behaviors are observed. We have not solved the problem of making sure that advanced AIs will follow our instructions, and in some circumstances they are found to cheat, lie, hack computers and try to escape our control, against their alignment training and instructions. Is it wise to design AIs that will soon be smarter than us across many cognitive abilities and could compete with us and try to avoid our control? We propose a safer path going forward: the design of non-agentic but fully trustworthy AIs modeled after a selfless platonic scientist trying to understand the world rather than trying to imitate or please us. For example, such non-agentic Scientist AIs could be used as monitors that reject potentially dangerous inputs or outputs of untrusted AI agents.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="speaker-card">
+            <div class="speaker-card" id="gal">
                 <img
                     src="resources/speaker/yarin_gal.jpg"
                     alt="Yarin Gal"
@@ -228,13 +242,26 @@
                     </a>
                     <!-- <strong>Yoshua Bengio</strong> -->
                     <div class="speaker-affiliation">Associate Professor - University of Oxford</div>
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="showTab(this, 'bio')">Bio</button>
+                        <button class="tab-button" onclick="showTab(this, 'abstract')">Abstract</button>
+                    </div>
+                    <!-- Tab Content -->
+                    <div class="tab-content active" data-tab="bio">
                     <p>
                         Yarin leads the Oxford Applied and <a href="https://oatml.cs.ox.ac.uk/members/yarin/">Theoretical Machine Learning (OATML) group</a>. He is an Associate Professor of Machine Learning at the Computer Science department, University of Oxford. He is also the Tutorial Fellow in Computer Science at Christ Church, Oxford, a Turing AI Fellow at the Turing Institute, and Director of Research at the UK Government's AI Security Institute (AISI, formerly the Frontier AI Taskforce).
                         Prior to his move to Oxford he was a Research Fellow in Computer Science at St Catharine's College at the University of Cambridge. He obtained his PhD from the Cambridge machine learning group, working with Prof Zoubin Ghahramani and funded by the Google Europe Doctoral Fellowship.
                     </p>
+                    </div>
+                    <div class="tab-content" data-tab="abstract">
+                        <p>
+                           TBD
+                        </p>
+                      </div>
+
                 </div>
             </div>
-            <div class="speaker-card">
+            <div class="speaker-card" id="tramer">
                 <img
                     src="resources/speaker/florian.png"
                     alt="Florian Tramèr"
@@ -245,17 +272,32 @@
                         <strong>Florian Tramèr</strong>
                     </a>
                     <div class="speaker-affiliation">Assistant Professor - ETH Zürich</div>
-                    <p>
-                        Florian Tramèr is an Assistant Professor of Computer Science at ETH Zürich, where he leads the <a href="https://spylab.ai/">Secure and Private AI (SPY) Lab</a>. 
-                        He is a member of the Information Security Institute and ZISC, and an associated faculty member of the ETHZ AI Center. 
-                        His research lies at the intersection of Computer Security, Machine Learning, and Cryptography. His work studies the worst-case 
-                        behavior of deep learning systems from an adversarial perspective, aiming to understand and mitigate long-term threats to user 
-                        safety and privacy. Under his leadership, the SPY Lab investigates the robustness and trustworthiness of machine learning systems, 
-                        often using adversarial attacks to probe and improve their security.
-                    </p>
+                    <!-- Tabs -->
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="showTab(this, 'bio')">Bio</button>
+                        <button class="tab-button" onclick="showTab(this, 'abstract')">Abstract</button>
+                    </div>
+                  
+                      <!-- Tab Content -->
+                      <div class="tab-content active" data-tab="bio">
+                        <p>
+                            Florian Tramèr is an Assistant Professor of Computer Science at ETH Zürich, where he leads the <a href="https://spylab.ai/">Secure and Private AI (SPY) Lab</a>. 
+                            He is a member of the Information Security Institute and ZISC, and an associated faculty member of the ETHZ AI Center. 
+                            His research lies at the intersection of Computer Security, Machine Learning, and Cryptography. His work studies the worst-case 
+                            behavior of deep learning systems from an adversarial perspective, aiming to understand and mitigate long-term threats to user 
+                            safety and privacy. Under his leadership, the SPY Lab investigates the robustness and trustworthiness of machine learning systems, 
+                            often using adversarial attacks to probe and improve their security.
+                        </p>
+                      </div>
+                  
+                      <div class="tab-content" data-tab="abstract">
+                        <p>
+                           In this talk, I'll cover some recent work on memorization and robustness in vision-language models. First, we'll discuss a curious phenomenon of "divergent memories" where VLMs can memorize data in one modality while having no concept of it in another. Second, we'll explore how techniques from the adversarial examples literature can be adapted to design efficient black-box attacks against VLMs.
+                        </p>
+                      </div>
                 </div>
             </div>
-            <div class="speaker-card">
+            <div class="speaker-card" id="qin">
                 <img
                     src="resources/speaker/yao_qin.jpg"
                     alt="Yao Qin"
@@ -267,12 +309,24 @@
                     </a>
                     <!-- <strong>Yoshua Bengio</strong> -->
                     <div class="speaker-affiliation">Assistant Professor - UC Santa Barbara</div>
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="showTab(this, 'bio')">Bio</button>
+                        <button class="tab-button" onclick="showTab(this, 'abstract')">Abstract</button>
+                    </div>
+                    <!-- Tab Content -->
+                    <div class="tab-content active" data-tab="bio">
                     <p>
                         Qin Yao is an Assistant Professor at the Department of Electrical and Computer Engineering, affiliated with the Department of Computer Science 
                         at UC Santa Barbara, where she is also co-leading the <a href="https://www.ai.ece.ucsb.edu/">REAL AI initiative</a>. Meanwhile, she is a senior 
                         Research Scientist at Google DeepMind, working on Gemini Multimodal. She obtained her PhD degree at UC San Diego in Computer Science, 
                         advised by Prof. Garrison W. Cottrell. During her PhD, she also interned under the supervision of Geoffrey Hinton, Ian Goodfellow and many others.
                     </p>
+                    </div>
+                    <div class="tab-content" data-tab="abstract">
+                        <p>
+                           TBD
+                        </p>
+                      </div>
                 </div>
             </div>
         </div>
@@ -433,6 +487,22 @@ window.onclick = function(event) {
       }
     }
   }
+}
+
+
+function showTab(button, tabKey) {
+  const card = button.closest('.speaker-card'); // Get the card where the button was clicked
+
+  const buttons = card.querySelectorAll('.tab-button');
+  const contents = card.querySelectorAll('.tab-content');
+
+  // Remove active class from all buttons & contents
+  buttons.forEach(btn => btn.classList.remove('active'));
+  contents.forEach(content => content.classList.remove('active'));
+
+  // Activate the clicked tab and corresponding content
+  button.classList.add('active');
+  card.querySelector(`.tab-content[data-tab="${tabKey}"]`).classList.add('active');
 }
 
 </script>
