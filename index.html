@@ -540,7 +540,7 @@ function showTab(button, tabKey) {
 // Load and render accepted papers from CSV
 async function loadAcceptedPapers() {
   console.log("hello")
-  const response = await fetch('resources/accepted_papers.json'); // Path to your CSV
+  const response = await fetch('./resources/accepted_papers.json'); // Path to your CSV
   const accepted = await response.json()
   const papersList = document.getElementById('papers-list');
 
