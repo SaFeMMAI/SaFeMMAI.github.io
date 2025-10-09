@@ -1,0 +1,163 @@
+[
+    {
+        "number": "2",
+        "type": "Full Paper",
+        "title": "Superimposing 3D-models for Privacy in Videos for Self-Supervised Training",
+        "authors": "Asfandyar Azhar, Nidhish Shah, Shaurjya Mandal, Yongjie Jessica Zhang",
+        "abstract": "We present a novel privacy-preserving data augmentation framework designed to overcome the realism gap commonly observed in synthetic-based action recognition techniques. While conventional approaches involving feature masking or synthetic data often result in lower data quality and reduced model performance, our method uses the mesh models to replace real humans with detailed 3D forms in video data. This preserves the subtle nuances of human motion and expression crucial for accurate action recognition. By enriching genuine footage with superimposed meshes, our framework simplifies both pre-training and fine-tuning, without the added complexities or biases associated with purely synthetic data. Our experiments show that the proposed approach achieves performance within 0.5% of models trained on raw video data, demonstrating that replacing humans with 3D meshes does not significantly diminish action recognition accuracy. This work thus provides a practical solution for data anonymization that maintains high performance, offering valuable insights for more ethically practical video data processing in computer vision and action recognition tasks."
+    },
+    {
+        "number": "8",
+        "type": "Full Paper",
+        "title": "Pulling Back the Curtain: Unsupervised Adversarial Detection via Contrastive Auxiliary Networks",
+        "authors": "Eylon Mizrahi, Raz Lapid, Moshe Sipper",
+        "abstract": "Deep learning models are widely employed in safety-critical applications yet remain susceptible to adversarial attacks---imperceptible perturbations that can significantly degrade model performance. Conventional defense mechanisms predominantly focus on either enhancing model robustness or detecting adversarial inputs independently. In this work, we propose an $\\textbf{U}$nsupervised adversarial detection via $\\textbf{C}$ontrastive $\\textbf{A}$uxiliary $\\textbf{N}$etworks ($\\textbf{U-CAN}$) to uncover adversarial behavior within auxiliary feature representations, without the need for adversarial examples. U-CAN is embedded within selected intermediate layers of the target model. These lightweight auxiliary networks, refine feature representations to more effectively distinguish between benign and adversarial inputs. Comprehensive experiments across multiple datasets (CIFAR-10, Mammals, and a subset of ImageNet) and architectures (ResNet-50, VGG-16, and ViT) demonstrate that our method surpasses existing unsupervised adversarial detection techniques, achieving superior F1 scores against three distinct attack methods. We also evaluate U-CAN under adaptive attacks crafted with full knowledge of both the classifier and detector. The proposed framework provides a scalable and effective solution for enhancing the security and reliability of deep learning systems."
+    },
+    {
+        "number": "12",
+        "type": "Full Paper",
+        "title": "Safety Without Semantic Disruptions: Editing-free Safe Image Generation via Context-preserving Dual Latent Reconstruction",
+        "authors": "Jordan Vice, NAVEED AKHTAR, Mubarak Shah, Richard Hartley, Ajmal Saeed Mian",
+        "abstract": "Training multimodal generative models on large, uncurated datasets can result in users being exposed to harmful, unsafe and controversial or culturally-inappropriate outputs. While model editing has been proposed to remove or filter undesirable concepts in embedding and latent spaces, it can inadvertently damage learned manifolds, distorting concepts in close semantic proximity. We identify limitations in current model editing techniques, showing that even benign, proximal concepts may become misaligned. To address the need for safe content generation, we leverage safe embeddings and a modified diffusion process with tunable weighted summation in the latent space to generate safer images. Our method preserves global context without compromising the structural integrity of the learned manifolds. We achieve state-of-the-art results on safe image generation benchmarks and offer intuitive control over the level of model safety. We identify trade-offs between safety and censorship, which presents a necessary perspective in the development of ethical AI models. We will release our code."
+    },
+    {
+        "number": "14",
+        "type": "Full Paper",
+        "title": "On the Importance of Conditioning for Privacy-Preserving Data Augmentation",
+        "authors": "Julian Lorenz, Katja Ludwig, Valentin Haug, Rainer Lienhart",
+        "abstract": "Latent diffusion models can be used as a powerful augmentation method to artificially extend datasets for enhanced training, by swapping parts of the image with generated content which look very different from the originals to the human eye.\nA recent ECCV oral paper has suggested to use this data augmentation technique for data anonymization.\nHowever, we show in this paper that latent diffusion models that are conditioned on modalities like depth maps or edges to guide the diffusion process are not suitable as a privacy-preserving method.\nWe use a contrastive learning approach to train a model that can correctly identify people out of a pool of candidates, with a success rate of over 69% regarding a pool of over 3k persons.\nMoreover, we demonstrate that anonymization using conditioned diffusion models is susceptible to black box attacks.\nWe attribute the success of the described methods to the conditioning of the latent diffusion model in the anonymization process. The diffusion model is instructed to produce similar edges for the anonymized images. Hence, a model can learn to recognize these patterns for identification."
+    },
+    {
+        "number": "16",
+        "type": "Full Paper",
+        "title": "FrEVL: Leveraging Frozen Pretrained Embeddings for Efficient Vision-Language Understanding",
+        "authors": "Emmanuelle Bourigault, Pauline Bourigault",
+        "abstract": "The deployment of vision-language models remains constrained by substantial computational requirements. We present \\textbf{FrEVL}, a framework exploring whether frozen pretrained embeddings can support effective vision-language understanding. Our analysis reveals that frozen embeddings contain rich information for discriminative tasks, achieving 85\\% to 95\\% of state-of-the-art performance on standard benchmarks with only 68.4M trainable parameters. This performance dichotomy reveals a critical insight: frozen embedding effectiveness depends on alignment between pretraining objectives and downstream task requirements. When accounting for end-to-end computation including embedding extraction, FrEVL provides $2.3\\times$ speedup with 52\\% lower energy consumption, making it suitable for scenarios with pre-computable inputs or when deployment constraints outweigh marginal performance gains. Our evaluation provides practitioners with guidance on when frozen embedding approaches represent viable alternatives to full model deployment. We will release our complete implementation and evaluation framework to facilitate further research into efficient multimodal understanding."
+    },
+    {
+        "number": "18",
+        "type": "Short Paper",
+        "title": "Beyond Overcorrection: Evaluating Diversity in T2I Models with DivBench",
+        "authors": "Felix Friedrich, Thiemo Ganesha Welsch, Manuel Brack, Patrick Schramowski, Kristian Kersting",
+        "abstract": "Current diversification strategies for text-to-image (T2I) models often ignore contextual appropriateness, leading to over-diversification where demographic attributes are modified even when explicitly specified in prompts. This paper introduces DivBench, a benchmark and evaluation framework for measuring both under- and over-diversification in T2I generation. Through systematic evaluation of state-of-the-art T2I models, we find that while most models exhibit limited diversity, many diversification approaches overcorrect by inappropriately altering contextually-specified attributes. We demonstrate that context-aware methods, particularly LLM-guided FairDiffusion and prompt rewriting, can already effectively address under-diversity while avoiding over-diversification, achieving a better balance between representation and semantic fidelity. We publicly release our data and code at \\url{anony.mous}."
+    },
+    {
+        "number": "20",
+        "type": "Short Paper",
+        "title": "DASH: Detection and Assessment of Systematic Hallucinations of VLMs",
+        "authors": "Maximilian Augustin, Yannic Neuhaus, Matthias Hein",
+        "abstract": "Vision-language models (VLMs) are prone to object hallucinations, where they erroneously indicate the presence of certain objects in an image. We propose\nDASH (Detection and Assessment of Systematic Hallucinations), an automatic, large-scale pipeline designed to identify systematic hallucinations of VLMs in an open-world setting.\nA key component is \\oursopt for image-based retrieval, where we optimize over the ``natural image manifold'' to generate images that mislead the VLM. The output of DASH consists of clusters of real and semantically similar images for which the VLM hallucinates an object. We apply DASH to PaliGemma and two LLaVA-NeXT models across 380 object classes and, in total, find more than $19$K clusters with $950$K images. \nWe introduce a new benchmark DASH-B and show that fine-tuning PaliGemma with the model-specific images obtained with DASH mitigates object hallucinations."
+    },
+    {
+        "number": "21",
+        "type": "Short Paper",
+        "title": "Variational Visual Question Answering",
+        "authors": "Tobias Jan Wieczorek, Nathalie Daun, Mohammad Emtiyaz Khan, Marcus Rohrbach",
+        "abstract": "Despite remarkable progress in multimodal models for Visual Question Answering (VQA), there remain major reliability concerns due to frequent overconfidence and miscalibration, especially in out-of-distribution (OOD) settings. While these issues persist even in unimodal models, they remain largely understudied in multimodal settings. Here, we address unreliability in multimodal models by proposing a Variational VQA approach. Specifically, instead of fine-tuning vision-language models by using AdamW, we employ a recently proposed variational algorithm called IVON, which yields a posterior distribution over model parameters. Through extensive experiments on VQA and Visual Reasoning tasks, we show that our approach improves calibration and abstentions without sacrificing the accuracy of AdamW. In particular, for a low risk of 1%, Coverage is increased by 4% vs. SOTA on VQAv2 (ID), and by 8% vs. SOTA in 50/50 ID/OOD. We further propose a novel risk-averse selector function for variational models that beats the widely used sample-averaging baseline in Selective Prediction. Overall, we present variational learning as a viable option to enhance the reliability of multimodal models."
+    },
+    {
+        "number": "22",
+        "type": "Short Paper",
+        "title": "Robust Vision-Language Models via Tensor Decomposition: A Defense Against Adversarial Attacks",
+        "authors": "Het Patel, Muzammil Allie, Qian Zhang, Jia Chen, Evangelos E. Papalexakis",
+        "abstract": "Vision language models (VLMs) excel in multimodal understanding but are prone to adversarial attacks. Existing defenses often demand costly retraining or significant architecture changes. We introduce a lightweight defense using tensor decomposition suitable for any pre-trained VLM, requiring no retraining. By decomposing and reconstructing vision encoder representations, it filters adversarial noise while preserving meaning. Experiments with CLIP on COCO and Flickr30K show improved robustness. On Flickr30K, it restores 12.3\\% performance lost to attacks, raising Recall@1 accuracy from 7.5\\% to 19.8\\%. On COCO, it recovers 8.1\\% performance, improving accuracy from 3.8\\% to 11.9\\%. Analysis shows Tensor Train decomposition with low rank (8-32) and low residual strength ($\\alpha=0.1-0.2$) is optimal. This method is a practical, plug-and-play solution with minimal overhead for existing VLMs."
+    },
+    {
+        "number": "23",
+        "type": "Short Paper",
+        "title": "SIFT-Graph: Benchmarking Multimodal Defense Against Image Adversarial Attacks With Robust Feature Graph",
+        "authors": "Jingjie He, Weijie Liang, Zihan Shan, Matthew Caesar",
+        "abstract": "Adversarial attacks expose a fundamental vulnerability in modern deep vision models by exploiting their dependence on dense, pixel-level representations that are highly sensitive to imperceptible perturbations. Traditional defense strategies typically operate within this fragile pixel domain, lacking mechanisms to incorporate inherently robust visual features. In this work, we introduce SIFT-Graph, a multimodal defense framework that enhances the robustness of traditional vision models by aggregating structurally meaningful features extracted from raw images using both handcrafted and learned modalities. Specifically, we integrate Scale-Invariant Feature Transform keypoints with a Graph Attention Network to capture scale and rotation invariant local structures that are resilient to perturbations. These robust feature embeddings are then fused with traditional vision model, such as Vision Transformer and Convolutional Neural Network, to form a unified, structure-aware and perturbation defensive model. Preliminary results demonstrate that our method effectively improves the visual model robustness against gradient-based white box adversarial attacks, while incurring only a marginal drop in clean accuracy."
+    },
+    {
+        "number": "24",
+        "type": "Short Paper",
+        "title": "CuRe: Cultural Gaps in the Long Tail of Text-to-Image Systems",
+        "authors": "Aniket Rege, Zinnia Nie, Mahesh Ramesh, Unmesh Raskar, Zhuoran Yu, Aditya Kusupati, Yong Jae Lee, Ramya Korlakai Vinayak",
+        "abstract": "Popular text-to-image (T2I) systems are trained on web-scraped data, which is heavily Amero and Euro-centric, underrepresenting the cultures of the Global South. To analyze these biases, we introduce CuRe, a novel and scalable benchmarking and scoring suite for cultural representativeness that leverages the marginal utility of attribute specification to T2I systems as a proxy for human judgments. Our CuRe benchmark dataset has a novel categorical hierarchy built from the crowdsourced Wikimedia knowledge graph, with 300 cultural artifacts across 32 cultural subcategories grouped into six broad cultural axes (food, art, fashion, architecture, celebrations, and people). Our dataset's categorical hierarchy enables CuRe scorers to evaluate T2I systems by analyzing their response to increasing the informativeness of text conditioning, enabling fine-grained cultural comparisons. We empirically observe much stronger correlations of our class of scorers to human judgments of perceptual similarity, image-text alignment, and cultural diversity across image encoders, multimodal language models and state-of-the-art text-to-image systems."
+    },
+    {
+        "number": "25",
+        "type": "Short Paper",
+        "title": "Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models",
+        "authors": "Mateusz Pach, Shyamgopal Karthik, Quentin Bouniot, Serge Belongie, Zeynep Akata",
+        "abstract": "Sparse Autoencoders (SAEs) have recently been shown to enhance interpretability and steerability in Large Language Models (LLMs). In this work, we extend the application of SAEs to Vision-Language Models (VLMs), such as CLIP or SigLIP, and introduce a comprehensive framework for evaluating monosemanticity in vision representations. Our experimental results reveal that SAEs trained on VLMs significantly enhance the monosemanticity of individual neurons."
+    },
+    {
+        "number": "26",
+        "type": "Short Paper",
+        "title": "DAC-LoRA: Dynamic Adversarial Curriculum for Efficient and Robust Few-Shot Adaptation",
+        "authors": "Ved Umrajkar",
+        "abstract": "Vision-Language Models (VLMs) are foundational to critical applications like autonomous driving, medical diagnosis, and content moderation. While Parameter-Efficient Fine-Tuning (PEFT) methods like LoRA enable their efficient adaptation to specialized tasks, these models remain vulnerable to adversarial attacks that can compromise safety-critical decisions. CLIP, the backbone for numerous downstream VLMs, is a high-value target whose vulnerabilities can cascade across the multimodal AI ecosystem.\n\nWe propose Dynamic Adversarial Curriculum DAC-LoRA, a novel framework that integrates adversarial training into PEFT. The core principle of our method---an intelligent curriculum of progressively challenging attacks---is general and can potentially be applied to any iterative attack method. Guided by the First-Order Stationary Condition (FOSC) and a TRADES-inspired loss, DAC-LoRA achieves substantial improvements in adversarial robustness without significantly compromising clean accuracy. Our work presents an effective, lightweight, and broadly applicable method to demonstrate that the DAC-LoRA framework can be easily integrated into a standard PEFT\npipeline to significantly enhance robustness."
+    },
+    {
+        "number": "29",
+        "type": "Short Paper",
+        "title": "NavTrust: Benchmarking Trustworthiness for Embodied Navigation",
+        "authors": "Yash Chaudhary, Huaide Jiang, Yuping Wang, Lichao Sun, Zhiwen Fan, Zhengzhong Tu, Jiachen Li",
+        "abstract": "Embodied navigation is hard in cluttered indoor spaces with language-conditioned goals. Two paradigms dominate: Vision-Language Navigation (VLN), which follows natural instructions, and Object-Goal Navigation (OGN), which seeks targets. Prior evaluations emphasize nominal conditions, overlooking realistic sensor and instruction corruptions. We introduce NavTrust, a unified benchmark that systematically perturbs RGB, depth, and language to quantify robustness. To our knowledge, it is the first to jointly test diverse RGB–Depth corruptions and instruction edits in one protocol. Across six state-of-the-art agents, we observe success-rate drops, revealing critical robustness gaps"
+    },
+    {
+        "number": "30",
+        "type": "Short Paper",
+        "title": "SIA: Enhancing Safety via Intent Awareness for Vision-Language Models",
+        "authors": "Youngjin Na, Sangheon Jeong, Youngwan Lee, JiAn Lee, Jeong Da Woon, Youngman Kim",
+        "abstract": "With the growing deployment of Vision-Language Models (VLMs) in real-world applications, previously overlooked safety risks are becoming increasingly evident. In particular, seemingly innocuous multimodal inputs can combine to reveal harmful intent, leading to unsafe model outputs. While multimodal safety has received increasing attention, existing approaches often fail to address such latent risks, especially when harmfulness arises only from the interaction between modalities. We propose SIA (Safety via Intent Awareness), a training-free, intent-aware safety framework that proactively detects harmful intent in multimodal inputs and uses it to guide the generation of safe responses. SIA follows a three-stage process: (1) visual abstraction via captioning, (2) intent inference through few-shot chain-of-thought (CoT) prompting, and (3) intent-conditioned response generation. By dynamically adapting to the implicit intent inferred from an image–text pair, SIA mitigates harmful outputs without extensive retraining.  Extensive experiments on safety benchmarks, including SIUO, MM-SafetyBench, and HoliSafe, show that SIA consistently improves safety and outperforms prior training-free methods."
+    },
+    {
+        "number": "32",
+        "type": "Short Paper",
+        "title": "Are VLMs Ready for Autonomous Driving? An Empirical Study from the Reliability, Data, and Metric Perspectives",
+        "authors": "Shaoyuan Xie, Lingdong Kong, Yuhao Dong, Chonghao Sima, Wenwei Zhang, Qi Alfred Chen, Ziwei Liu, Liang Pan",
+        "abstract": "Recent advancements in Vision-Language Models (VLMs) have sparked interest in autonomous driving applications, particularly for those that incorporate interpretable human knowledge. However, the assumption that VLMs provide visually grounded and reliable driving explanations remains unexamined. To address this, we introduce DriveBench, a benchmark evaluating $12$ VLMs across $17$ settings, covering $19{,}200$ images, $20{,}498$ QA pairs, and four key driving tasks. Our findings reveal that existing VLMs often generate plausible responses from general knowledge or textual cues rather than true visual grounding, especially under degraded or missing visual inputs. This behavior, concealed by dataset imbalances and insufficient evaluation metrics, poses significant risks in safety-critical autonomous driving applications. We further observe that VLMs possess inherent corruption-awareness but only explicitly acknowledge these issues when directly prompted. Our study challenges existing evaluation paradigms and provides a road map toward more trustworthy autonomous driving systems."
+    },
+    {
+        "number": "34",
+        "type": "Short Paper",
+        "title": "Revisiting VLLM Safety Evaluation: Disentangling Benign Grounding from True Safety Failures in VLLMs",
+        "authors": "Sumin Yu, Hyunwoong Bae, Taesup Moon",
+        "abstract": "Ensuring the safety of Vision-Language Large Models (VLLMs) requires more than checking if their outputs are harmful. We reveal a common but overlooked failure mode, Not Safety-Grounded (NSG) cases, where benign outputs result from grounding in safety-\\textit{irrelevant} aspects of harmful inputs. Conventional benchmarks often misclassify these as unsafe, obscuring true safety behavior. We introduce a lightweight evaluation protocol that incorporates a visual grounding step to distinguish between NSG and genuine safety-alignment failures, and apply it to six VLLMs on two safety benchmarks, VLSBench and SIUO. We observe that over half of NSG cases--over 80\\% for some models--are mislabeled under conventional schemes. Our protocol reduces such misclassifications, quantifies benign grounding behavior, and produces safety metrics that can more accurately reflect model behavior in the perspective of safety."
+    },
+    {
+        "number": "36",
+        "type": "Short Paper",
+        "title": "Transformer Block Mixtures: Layer-Specific Adaptation Strategy",
+        "authors": "Shafiq Abedin, Rogerio Feris",
+        "abstract": "This paper presents Transformer Block Mixtures (TBM), a novel layer-specific adaptation strategy for enhancing safety alignment in Vision Language Models (VLMs). Unlike conventional Parameter-Efficient Fine-Tuning (PEFT) methods that apply uniform adaptation across all layers, TBM implements hierarchical adaptation intensities based on transformer layers' functional roles: conservative adaptation for early layers preserving foundational capabilities, aggressive adaptation for middle layers enhancing reasoning, and balanced adaptation for late layers enabling safe output generation. Our approach represents a departure from framework-driven PEFT toward empirically-motivated, task-optimized adaptation strategies."
+    },
+    {
+        "number": "37",
+        "type": "Short Paper",
+        "title": "Calibration-Aware Prompt Learning for Medical Vision-Language Models",
+        "authors": "Abhishek Basu, Fahad Shamshad, Ashshak Sharifdeen, Karthik Nandakumar, Muhammad Haris Khan",
+        "abstract": "Medical Vision-Language Models (Med-VLMs) have demonstrated remarkable performance across diverse medical imaging tasks by leveraging large-scale image-text pretraining. However, their confidence calibration is largely unexplored, and so remains a significant challenge. As such, miscalibrated predictions can lead to overconfident errors, undermining clinical trust and decision-making reliability.\nTo address this, we introduce \\texttt{CalibPrompt}, the first framework to calibrate Med-VLMs during prompt tuning. \n\\texttt{CalibPrompt} optimizes a small set of learnable prompts with carefully designed calibration objectives under scarce labeled data regime.\nFirst, we study a regularizer that attempts to align the smoothed accuracy with the predicted model confidences. Second, we introduce an angular separation loss to maximize textual feature proximity toward improving the reliability in confidence estimates of Med-VLMs.\nExperiments on four publicly available Med-VLMs and five diverse medical imaging datasets reveal that \\texttt{CalibPrompt} consistently improves calibration without drastically affecting clean accuracy."
+    },
+    {
+        "number": "38",
+        "type": "Short Paper",
+        "title": "HalluSegBench: Counterfactual Visual Reasoning for Segmentation Hallucination Evaluation",
+        "authors": "Xinzhuo Li, Adheesh Sunil Juvekar, Xingyou Liu, Muntasir Wahed, Kiet A. Nguyen, Ismini Lourentzou",
+        "abstract": "Recent progress in vision-language segmentation has significantly advanced grounded visual understanding. However, these models often exhibit hallucinations by producing segmentation masks for objects not grounded in the image content or by incorrectly labeling irrelevant regions. Existing evaluation protocols for segmentation hallucination primarily focus on label or textual hallucinations without manipulating the visual context, limiting their capacity to diagnose critical failures. In response, we introduce $HalluSegBench$, the first benchmark specifically designed to evaluate hallucinations in visual grounding through the lens of counterfactual visual reasoning. It includes $1340$ counterfactual instance pairs spanning $281$ unique object classes and new metrics that quantify hallucination sensitivity under visually coherent scene edits. Experiments with state-of-the-art vision-language segmentation models reveal that vision-driven hallucinations are significantly more prevalent than label-driven ones, with models often persisting in false segmentation, highlighting the need for counterfactual reasoning to diagnose grounding fidelity."
+    },
+    {
+        "number": "39",
+        "type": "Short Paper",
+        "title": "Differentially Private Adaptation of Diffusion Models via Noisy Aggregated Embeddings",
+        "authors": "Pura Peetathawatchai, Wei-Ning Chen, Berivan Isik, Sanmi Koyejo, Albert No",
+        "abstract": "Personalizing large-scale diffusion models poses serious privacy risks, especially when adapting to small, sensitive datasets. A common approach is to fine-tune the model using differentially private stochastic gradient descent (DP-SGD), but this suffers from severe utility degradation due to the high noise needed for privacy, particularly in the small data regime. We propose an alternative that leverages Textual Inversion (TI), which learns an embedding vector for an image or set of images, to enable adaptation under differential privacy (DP) constraints. Our approach, Differentially Private Aggregation via Textual Inversion (DPAgg-TI), adds calibrated noise to the aggregation of per-image embeddings to ensure formal DP guarantees while preserving high output fidelity. We show that DPAgg-TI outperforms DP-SGD finetuning in both utility and robustness under the same privacy budget, achieving results closely matching the non-private baseline on style adaptation tasks using private artwork from a single artist and Paris 2024 Olympic pictograms. In contrast, DP-SGD fails to generate meaningful outputs in this setting."
+    },
+    {
+        "number": "41",
+        "type": "Short Paper",
+        "title": "Safety-Aware Partially-Observable Embodied Task Planning",
+        "authors": "Hyungmin Kim, HoBeomJeon, DohyungKim, Minsu Jang, Jaehong Kim",
+        "abstract": "Ensuring safety in embodied task planning remains a critical challenge, particularly under partial observability and strict physical constraints. We present Safety-Aware Partially-Observable (SAPO), a benchmark that unifies safety constraints, partial observability, and goal-conditioned evaluation for embodied agents. SAPO defines diverse household hazard scenarios and employs multi-turn, step-by-step planning with low-level actions, enabling rigorous assessment through state-based, sub-goal, and constraints-conditioned success rates. We evaluate multiple recent multimodal large language models (MLLMs) within a ReAct-style agent framework under both explicit and implicit safety constraint settings. Results show uniformly low success rates across all metrics, with only gpt5-mini achieving modest gains in the explicit setting and all other models failing to meet safety constraints. These findings highlight the significant difficulty of safety-aligned planning under partial observability and point to the need for new approaches that integrate safety reasoning, state tracking, and long-horizon adaptability into embodied AI systems."
+    },
+    {
+        "number": "42",
+        "type": "Short Paper",
+        "title": "Get RICH or Die Scaling: Profitably Trading Inference Compute for Robustness",
+        "authors": "Tavish Malcolm McDonald, Bo Lei, Stanislav Fort, Bhavya Kailkhura, Brian R. Bartoldson",
+        "abstract": "Text-based jailbreaks can be resisted by increasing inference compute (i.e., reasoning length), but vision-based jailbreaks against multimodal models remain relatively successful even as inference compute is scaled. These vision jailbreaks typically rely on noise-like perturbations to the input images that models have not been trained to resist. When attacking a model trained to resist such noise-like patterns, though, recent work shows perturbations can instead be human-interpretable -- such human-interpretable attacks construct antagonistic but familiar concepts connected to the attacker's goal and rely on the model's accurate understanding of these concepts. Inspired by this ability of robust models to force attacks into a space that appears more in-distribution for reasoning tasks, we posit the Robustness from Inference Compute Hypothesis (RICH): defenses against attacks with inference compute (like reasoning) profit as those attacks become more in-distribution. RICH predicts a rich-get-richer dynamic -- models that start with higher initial robustness gain more robustness benefits from increases in inference-time compute because attacks on them more closely resemble in-distribution data that can be reasoned upon. To test this, we adversarially attack models of varying robustness with black-box-transfer and white-box attacks. Consistent with RICH, we find that more robust models benefit more from increased compute, whereas non-robust models show little to no improvement. Our work suggests that inference compute is an effective defense against adversarial attacks, provided the base model has some degree of robustness. Thus, we argue for layering of train-time and test-time defenses to obtain their synergistic benefit."
+    }
+]

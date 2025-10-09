@@ -303,7 +303,7 @@ margin-left: 1rem;
 }
 }
 
-.sessions li:nth-child(-n+4)::before {
+.sessions li:nth-child(-n+6)::before {
     content: '';                         /* 1 — make the pseudo-element exist   */
   width: 1.4rem;                       /* 2 — give it its own box            */
   height: 1.4rem;
@@ -630,6 +630,7 @@ footer p {
     align-items: center;
     padding: 1.5em 1em;
     gap: 1.2em;
+    max-width: fit-content;
   }
   .speaker-img {
     margin-right: 0;
@@ -660,11 +661,11 @@ footer p {
   }
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
     .speaker-info p {
       display: none;
     }
-  }
+  } */
 
 .subtitle {
     font-size: 0.7rem;
@@ -705,4 +706,109 @@ footer p {
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
+  .papers-list {
+    margin-top: 1rem;
+  }
+  .paper-item {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .paper-item:hover {
+    background-color: #eef6ff;
+  }
+  
+  .paper-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .paper-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1d3c5e;
+    flex: 1;
+  }
+  
+  .paper-type {
+    background-color: #1d3c5e;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    margin-left: 1rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  
+  .paper-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    margin-top: 0;
+  }
+  
+  
+  .paper-details p {
+    margin: 0.3rem 0;
+  }
+  
+  .paper-item.open .paper-details {
+    max-height: 500px; /* adjust if abstracts are longer */
+    opacity: 1;
+    margin-top: 0;
+  }
+  
+
+  @media (max-width: 700px) {
+    .paper-item {
+      padding: 0.9rem 1rem;
+    }
+  
+    .paper-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .paper-title {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+  
+    .paper-type {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      margin-left: 0;
+      align-self: flex-start;
+    }
+  
+    .paper-details {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+  
+    .paper-details p {
+      margin: 0.4rem 0;
+    }
+  
+    /* Make it easier to tap */
+    .paper-item {
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+  
+    .paper-item:hover {
+      background-color: #f4f9ff;
+    }
   }

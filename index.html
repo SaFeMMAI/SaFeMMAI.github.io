@@ -24,9 +24,9 @@
                 <ul>
                     <li><a href="#introduction">Introduction</a></li>
                     <li><a href="#important-dates">Important Dates</a></li>
-                    <li><a href="#cfp">Call for Papers</a></li>
                     <li><a href="#schedule">Schedule</a></li>
                     <li><a href="#speaker">Speakers</a></li>
+                    <li><a href="#papers">Accepted Papers</a></li>
                     <li><a href="#committee">Organizers</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#sponsorship">Sponsors</a></li>
@@ -34,13 +34,13 @@
             </div>
 
             <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn"><i class="fa fa-bars"></i></button>
+                <button onclick="myFunction(event)" class="dropbtn"><i class="fa fa-bars"></i></button>
                 <div id="myDropdown" class="dropdown-content">
                     <li><a href="#introduction" onclick="Close()">Introduction</a></li>
                     <li><a href="#important-dates" onclick="Close()">Important Dates</a></li>
-                    <li><a href="#cfp" onclick="Close()">Call for Papers</a></li>
                     <li><a href="#schedule" onclick="Close()">Schedule</a></li>
                     <li><a href="#speaker" onclick="Close()">Speakers</a></li>
+                    <li><a href="#papers" onclick="Close()">Accepted Papers</a></li>
                     <li><a href="#committee" onclick="Close()">Organizers</a></li>
                     <li><a href="#contact" onclick="Close()">Contact</a></li>
                     <li><a href="#sponsorship" onclick="Close()">Sponsors</a></li>
@@ -109,7 +109,7 @@
         </div>
     </section>
 
-    <section id="cfp" class="section">
+    <!-- <section id="cfp" class="section">
         <div class="container">
             <h1>Call for Papers</h1>
             <p>Our workshop focuses on advancing the development of multimodal AI systems that can robustly handle unsafe or adversarial inputs and consistently generate safe, reliable, and trustworthy outputs. Topics of interest include but are not limited to:</p>
@@ -127,10 +127,10 @@
                 Please check our <a href="resources/CFP/SaFeMM-AI_CFP_2025.pdf">Call for Papers document</a> which also applies to short paper submission except the page limit.
             <p>Accepted full paper submissions will be included in the official ICCV 2025 workshop proceedings. Both accepted full papers and short papers will be presented in the workshop poster session, so at least one author should register and present the poster.</p><br>
             <p><b>Note:</b> Submission of Full-paper (Archival track) has ended, submission platform is <b>currently open for short paper submissions only</b>.</p>
-            <!-- <p><b>Note:</b> we also plan to open submissions for short papers (4 pages long) in July. These will not be included in the ICCV proceedings. More details on this will follow after the full paper deadline.</p> -->
-            <div class="cfp-button-wrapper">
+             <p><b>Note:</b> we also plan to open submissions for short papers (4 pages long) in July. These will not be included in the ICCV proceedings. More details on this will follow after the full paper deadline.</p> -->
+            <!-- <div class="cfp-button-wrapper">
                 <a href="https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/SafeMM-AI" class="cover-scroll-button fancy-button">Submit Your Paper</a>
-              </div>
+              </div> -->
         </div>
     </section>
 
@@ -332,6 +332,14 @@
         </div>
     </section>
 
+    <section id="papers" class="section">
+        <div class="container">
+          <h1>Accepted Papers</h1>
+          <div id="papers-list" class="papers-list"></div>
+        </div>
+    </section>
+      
+
     <section id="committee" class="section">
         <div class="container">
             <h1>Organizers</h1>
@@ -482,8 +490,9 @@
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+function myFunction(event) {
+    event.stopPropagation(); // 🧠 stops window click handler
+    document.getElementById("myDropdown").classList.toggle("show");
 }
 
 function Close() {
@@ -526,5 +535,41 @@ function showTab(button, tabKey) {
   button.classList.add('active');
   card.querySelector(`.tab-content[data-tab="${tabKey}"]`).classList.add('active');
 }
+
+// Load and render accepted papers from CSV
+async function loadAcceptedPapers() {
+  console.log("hello")
+  const response = await fetch('resources/accepted_papers.json'); // Path to your CSV
+  const accepted = await response.json()
+  const papersList = document.getElementById('papers-list');
+
+  accepted.forEach((pub, index) => {
+    const number = pub.number;
+    const type = pub.type;
+    const title = pub.title;
+    const authors = pub.authors;
+    const abstract = pub.abstract; // in case abstract contains commas
+
+    const item = document.createElement('div');
+    item.classList.add('paper-item');
+    item.innerHTML = `
+      <div class="paper-header">
+        <div class="paper-title">${title}</div>
+        <div class="paper-type">${type.toUpperCase()}</div>
+    </div>
+      <div class="paper-details">
+        <p><strong>Authors:</strong> ${authors}</p>
+        <p><strong>Abstract:</strong> ${abstract}</p>
+      </div>
+    `;
+    item.addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+    papersList.appendChild(item);
+  });
+}
+
+window.onload = loadAcceptedPapers;
+
 
 </script>
