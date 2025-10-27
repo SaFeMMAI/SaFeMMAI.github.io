@@ -549,12 +549,37 @@ async function loadAcceptedPapers() {
   const accepted = await response.json()
   const papersList = document.getElementById('papers-list');
 
+  const posterList = [
+    "HalluSegBench_SafeMMAI_Poster.pdf",
+    "Navtrust_Safemmai_poster.pdf",
+    "pulling_back_the_courtain.pdf",
+    "Revisiting_Safemmai_poster.pdf",
+    "SIFT-Graph_safemmai_poser.pdf",
+    "Get_RICH_Poster_Landscape.pdf"
+  ];
+
   accepted.forEach((pub, index) => {
     const number = pub.number;
     const type = pub.type;
     const title = pub.title;
     const authors = pub.authors;
     const abstract = pub.abstract; // in case abstract contains commas
+
+    console.log(title)
+
+    // posterList.forEach((p) => {
+    //     console.log(p)
+    //     console.log(p.toLowerCase().split('_')[0])
+    // })
+    const match = posterList.find(p =>
+      title.toLowerCase().startsWith(p.toLowerCase().split('_')[0]) // match by prefix
+    );
+
+    console.log(match)
+
+    const posterLink = match
+      ? `<p><a href="./resources/posters/${match}" target="_blank" class="poster-link">📄 View Poster</a></p>`
+      : "";
 
     const item = document.createElement('div');
     item.classList.add('paper-item');
@@ -566,10 +591,20 @@ async function loadAcceptedPapers() {
       <div class="paper-details">
         <p><strong>Authors:</strong> ${authors}</p>
         <p><strong>Abstract:</strong> ${abstract}</p>
+        ${posterLink}
       </div>
     `;
     item.addEventListener('click', () => {
-      item.classList.toggle('open');
+    const details = item.querySelector('.paper-details');
+    const isOpen = item.classList.toggle('open');
+
+    if (isOpen) {
+        // Expand smoothly to the element’s actual height
+        details.style.maxHeight = details.scrollHeight + 'px';
+    } else {
+        // Collapse back smoothly
+        details.style.maxHeight = null;
+    }
     });
     papersList.appendChild(item);
   });
